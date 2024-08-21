@@ -1,8 +1,7 @@
 import { createReducer, on } from '@ngrx/store';
-import { decrement, increment, reset } from '../counter.actions';
+import { decrement, increment, reset } from './counter.actions';
 
-
-export const initialState = JSON.parse(localStorage.getItem("count") ?? '0');
+export const initialState = JSON.parse(localStorage.getItem('count') ?? '0');
 
 export const counterReducer = createReducer(
   initialState,
