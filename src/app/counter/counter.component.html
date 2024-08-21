@@ -1,7 +1,21 @@
 <div style="text-align: center">
-  <h1>Counter: {{ (counter$ | async)?.count }}</h1>
+  <h1>Counter: {{ (counter$ | async)?.count }} -- {{ interval }}</h1>
+
+  <input
+    type="number"
+    name="interval"
+    id="interval"
+    [(ngModel)]="interval"
+    (change)="setCountInterval()"
+  />
   <button (click)="decrement()">Decrement</button>
   <button (click)="increment()">Increment</button>
   <br />
+  <div>
+    <p>Interval presets</p>
+    @for(preset of presets; track preset) {
+    <button (click)="setPreset(preset)">{{ preset }}</button>
+    }
+  </div>
   <button (click)="reset()">Reset</button>
 </div>
