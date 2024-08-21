@@ -12,7 +12,7 @@ export const appConfig: ApplicationConfig = {
     provideStore(),
     // provideStore(reducers, { metaReducers }),
     provideState({
-      name: 'count',
+      name: 'counter',
       reducer: counterReducer,
     }),
   ],

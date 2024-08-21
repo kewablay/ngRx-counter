@@ -1,7 +1,10 @@
-import { createSelector } from "@ngrx/store";
-import { AppState } from "../../app.state";
+import { createSelector } from '@ngrx/store';
+import { AppState } from '../../app.state';
+import { CounterState } from './counter.reducer';
 
-export const selectCountState = (state: AppState) => state.count;
+export const selectCounterState = (state: AppState) => state.counter;
 
-export const selectCount = createSelector(selectCountState, (state) => state);
-
+export const selectCount = createSelector(
+  selectCounterState,
+  (state: CounterState) => state
+);

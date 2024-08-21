@@ -1,7 +1,7 @@
 <div style="text-align: center">
-  <h1>Counter: {{ count$ | async }}</h1>
+  <h1>Counter: {{ (counter$ | async)?.count }}</h1>
   <button (click)="decrement()">Decrement</button>
   <button (click)="increment()">Increment</button>
-  <br>
+  <br />
   <button (click)="reset()">Reset</button>
 </div>
