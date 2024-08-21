@@ -57,5 +57,6 @@ export class CounterComponent {
 
   setPreset(preset: number) {
     this.interval = preset;
+    this.setCountInterval();
   }
 }

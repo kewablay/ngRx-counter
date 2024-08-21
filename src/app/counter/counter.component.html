@@ -1,5 +1,5 @@
-<div style="text-align: center">
-  <h1>Counter: {{ (counter$ | async)?.count }} -- {{ interval }}</h1>
+<!-- <div style="text-align: center">
+  <h1>Counter: {{ (counter$ | async)?.count }}</h1>
 
   <input
     type="number"
@@ -18,4 +18,47 @@
     }
   </div>
   <button (click)="reset()">Reset</button>
-</div>
+</div> -->
+
+<section class="counter">
+  <div class="actions">
+    <button class="btn" (click)="decrement()">
+      <img src="assets/decrement.svg" alt="" />
+    </button>
+    <button class="btn" (click)="reset()">
+      <img src="assets/reset.svg" alt="" />
+    </button>
+    <button class="btn" (click)="increment()">
+      <img src="assets/increment.svg" alt="" />
+    </button>
+  </div>
+
+  <div class="count-container">
+    <h1 class="count">{{ (counter$ | async)?.count }}</h1>
+  </div>
+
+  <div class="interval-input-container">
+    <input
+      class="interval-input"
+      type="number"
+      name="interval"
+      id="interval"
+      placeholder="Interval"
+      [(ngModel)]="interval"
+      (change)="setCountInterval()"
+    />
+  </div>
+
+  <div class="presets-container">
+    <div class="presets-label">
+      <p>Interval Presets</p>
+      <p>total: {{ presets.length }}</p>
+    </div>
+
+    <div class="presets">
+      @for(preset of presets; track preset) {
+      <button class="preset" (click)="setPreset(preset)">{{ preset }}</button>
+      }
+    </div>
+  </div>
+</section>
