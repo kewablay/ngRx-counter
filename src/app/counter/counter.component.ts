@@ -26,7 +26,7 @@ export class CounterComponent {
   // @Input() interval: number = 1;
   interval: number = 1;
 
-    presets = [5, 10, 15, 20];
+  presets = [5, 10, 15, 20];
 
   constructor(private store: Store<AppState>) {
     // this.counter$ = store.select(selectCounterState);
@@ -57,6 +57,6 @@ export class CounterComponent {
 
   setPreset(preset: number) {
     this.interval = preset;
-    this.setCountInterval
+    this.setCountInterval();
   }
 }
